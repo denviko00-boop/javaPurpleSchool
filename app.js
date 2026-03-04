@@ -1,17 +1,11 @@
-const volume = 2**3 // 2 * 2 * 2 два в третьей степени
-console.log(volume)
+const deposit = 12000
+const rate = 0.07
+const depositLength = 24
+const houseCost = 13500
 
-const city = 'Cherven'
-const street = 'Gagarin'
-console.log(city + ', ' +  street)
-
-const isSuited = 100 - 10 > 90 - 5
-console.log('isSuited: ' + isSuited)
-
-
-
-const payRateUSD = 80;
-const projectHours = 40;
-const availableHours = (11 - 2) * 5
-console.log('Can I work? ' + (availableHours>projectHours))
-console.log('Orders sum: ', + projectHours*payRateUSD)
+const res = deposit * (1 + rate / 12) ** 24
+if (res > houseCost) {
+  console.log(`You can buy this house ostatok: ${res - houseCost}`)
+}else{
+  console.log('Yoy do not have enough money')
+}
