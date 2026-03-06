@@ -1,47 +1,25 @@
-const role = 'manager'
-switch (role) {
-	case 'manager':
-		console.log('manager')
-    break
-	case 'admin':
-		console.log('admin')
-		break
-
-	default: console.log('I do not know you')
-		break
-}
-
-const num = 1
-switch (true) {
-	case num > 0:
-		console.log('Положительный')
-		break
-	case num < 0:
-		console.log('Отрицательный')
-		break
-	default: console.log('null')
-		break
-}
+const isAdmin = true
+const canWrite = true
+console.log(`System file ${isAdmin && canWrite}`) // и и 
+console.log(`Common file ${isAdmin || canWrite}`) // или 
+console.log(`Инвертируем админа ${!isAdmin}`) // 
 
 
-const bmw = 100000
-const mazda = 20000
-const budget = 30000
-console.log(budget > bmw ? 'Покупаем бмв' : budget>mazda ? 'покупаем мазду' : 'катаемся на маршрутке')
+const isEdited = true
+const isSuperAdmin = true 
+console.log(`File is edited ${isAdmin && canWrite && !isEdited}`)
+console.log(`File is edited ${isAdmin && canWrite && (!isEdited || isSuperAdmin)}`) //
 
 
 
+const balance = 1200
+const bonusBalance = 90
+const isBanned = false
+const isExist = false
+const isSelling = true
 
-
-const question = prompt('Сколько будет 7+ или -15?')
-
-switch (true) {
-  case (question) === 'Я не робот':
-    case Number(question) === 22:
-    case Number(question) === -8:
-    console.log('Succesful')
-    break;
-
-  default: console.log('ТЫ РОБОТ')
-    break;
-}
+const canBuy = (balance>1000 || bonusBalance>100)
+&& !isBanned
+&& !isExist
+&& isSelling
+console.log(`I can buy the game: ${canBuy ? 'Yes' : 'No'}`)
